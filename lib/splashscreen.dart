@@ -22,9 +22,11 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             //Image container
             Container(
-              margin: EdgeInsets.only(top: 40),
-              height: MediaQuery.of(context).size.height / 6,
-              width: MediaQuery.of(context).size.width / 3,
+              margin: EdgeInsets.only(
+                  top: 40,
+              ),
+              height: MediaQuery.of(context).size.height / 5,
+              width: MediaQuery.of(context).size.width / 2.5,
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 border: Border.all(
@@ -34,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
                 borderRadius: BorderRadius.circular(15),
                 image: DecorationImage(
-                  image: AssetImage("images/ICT DIVISION.jpg"),
+                  image: AssetImage("images/ICT DIVISION.jpg.jpg"),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -53,14 +55,11 @@ class _SplashScreenState extends State<SplashScreen> {
                 "Let's Enter in this course.",
                 style: TextStyle(
                     fontSize: 25,
-                    fontWeight: FontWeight.w800,
+                    fontWeight: FontWeight.w900,
                     fontStyle: FontStyle.italic,
                     color: Color.fromRGBO(0, 0, 255, 1),
-                    decoration: TextDecoration.underline,
-                    decorationStyle: TextDecorationStyle.dashed,
-                    decorationColor: Color.fromRGBO(38, 134, 255, 1),
-                    decorationThickness: 1,
-                    wordSpacing: 2),
+                    wordSpacing: 2,
+                ),
                 textAlign: TextAlign.center,
               ),
             ),
@@ -71,41 +70,36 @@ class _SplashScreenState extends State<SplashScreen> {
                     context,
                     MaterialPageRoute(
                       builder: (context) => ProfilePage(),
-                    ));
+                    ),
+                );
               },
               child: Container(
                 padding: EdgeInsets.symmetric(horizontal: 20),
                 height: MediaQuery.of(context).size.height / 13,
-                width: MediaQuery.of(context).size.width / 4,
+                width: MediaQuery.of(context).size.width / 3.5,
                 decoration: BoxDecoration(
                   border: Border.all(
-                    color: Color.fromRGBO(
-                      0,
-                      0,
-                      255,
-                      0.7,
-                    ),
                     width: 3,
-                    style: BorderStyle.solid,
+                  style: BorderStyle.solid,
                   ),
                   borderRadius: BorderRadiusDirectional.circular(15),
-                  color: Color.fromARGB(122, 10, 35, 1),
+                  color: Color.fromRGBO(103, 123, 235, 1),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "start",
+                      "Start",
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 25,
                         fontWeight: FontWeight.w600,
-                        color: Color.fromRGBO(33, 10, 122, 1),
+                        color: Color.fromRGBO(0, 0, 0, 1),
                       ),
                     ),
                     Icon(
-                      Icons.arrow_back_ios_rounded,
+                      Icons.arrow_forward_ios_rounded,
                       size: 15,
-                      color: Color.fromRGBO(33, 10, 122, 1),
+                      color: Color.fromRGBO(0, 0, 0, 1),
                     ),
                   ],
                 ),
