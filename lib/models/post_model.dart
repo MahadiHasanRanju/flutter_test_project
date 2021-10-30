@@ -15,7 +15,7 @@ class Postmodel {
   String username;
   String profileImageURL;
   String caption;
-  String likes;
+  int likes;
   String postImageURL;
   String address;
 }
