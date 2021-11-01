@@ -70,10 +70,52 @@ class _Post_pageState extends State<Post_page> {
       body: Align(
         alignment: Alignment.centerLeft,
         child: ListView.builder(
+          padding: EdgeInsets.symmetric(
+              horizontal: 10,vertical: 10),
           itemCount:  postmodels.length,
             itemBuilder: (BuildContext context,int index)
             {return Container(
-
+              height: MediaQuery.of(context).size.height/1.5,
+              width: MediaQuery.of(context).size.width,
+              child: Column(
+               mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  //Header Row profile image
+                  Row(children: [
+                    CircleAvatar(
+                      radius: 34,
+                      backgroundImage: AssetImage(
+                          "${postmodels[index].profileImageURL}"),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15),
+                        child: RichText(
+                          textAlign: TextAlign.justify,
+                        text: TextSpan(
+                          text: "${postmodels[index].username}\n",
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromRGBO(0, 0, 0, .6),
+                        ),
+                        children: [
+                          TextSpan(
+                            text: "${DateTime.now().day}/${DateTime.now().year}/${DateTime.now().hour}",
+                        style:TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromRGBO(0, 0, 0, .6),
+                        ) ,)
+                        ],
+                        ),
+                        ),
+                      ),
+                    ),
+                  ],
+                  )
+                ],
+              ),
             );
             },
         ),
