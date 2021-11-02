@@ -73,15 +73,18 @@ class _Post_pageState extends State<Post_page> {
           padding: EdgeInsets.symmetric(
               horizontal: 10,vertical: 10),
           itemCount:  postmodels.length,
-            itemBuilder: (BuildContext context,int index)
-            {return Container(
+            itemBuilder: (BuildContext context,int index) {
+            return Container(
               height: MediaQuery.of(context).size.height/1.5,
               width: MediaQuery.of(context).size.width,
               child: Column(
                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+
                   //Header Row profile image
-                  Row(children: [
+
+                  Row(
+              children: [
                     CircleAvatar(
                       radius: 34,
                       backgroundImage: AssetImage(
@@ -106,15 +109,70 @@ class _Post_pageState extends State<Post_page> {
                           fontSize: 17,
                           fontWeight: FontWeight.w700,
                           color: Color.fromRGBO(0, 0, 0, .6),
-                        ) ,)
+                        ),
+                          ),
                         ],
                         ),
                         ),
                       ),
                     ),
                   ],
-                  )
-                ],
+                  ),
+
+                  //Address Row and Caption taking column
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                  child:Container(
+                    height: MediaQuery.of(context).size.height,
+                    width: MediaQuery.of(context).size.width/9,
+            child: Column(
+            children: [
+              //Address row
+
+            Container(
+            height: MediaQuery.of(context).size.height/30,
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              children: [
+              Icon(
+                Icons.location_city_outlined,
+            size: 15,
+            color: Color.fromRGBO(0, 0, 0, .6),
+            ),
+                Padding(
+                  padding:EdgeInsets.symmetric(horizontal: 10) ,
+                  child: Text(
+                      "${postmodels[index].address}",
+                  style: TextStyle(fontSize: 10,
+                  fontWeight: FontWeight.w500,
+                  color: Color.fromRGBO(0, 0, 0, .6),
+                  ),
+                  textAlign: TextAlign.justify),
+                ),
+            ],
+            ),
+            ),
+
+//Caption Container
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Container(
+                  height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width,
+                child: Text("${postmodels[index].caption}",
+                  style: TextStyle(fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                  color: Color.fromRGBO(0, 0, 0, .6),
+                  ),
+                ),
+              )
+
+            ),
+            ],
+                  ),
+                  ),
+                  ),
+                ]
               ),
             );
             },
@@ -122,5 +180,6 @@ class _Post_pageState extends State<Post_page> {
       ),
     );
   }
+
 }
 
