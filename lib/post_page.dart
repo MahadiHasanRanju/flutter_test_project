@@ -172,6 +172,63 @@ class _Post_pageState extends State<Post_page> {
                   ),
                   ),
                   ),
+
+                  //post image Container
+
+                  Padding(
+                    padding:EdgeInsets.symmetric(vertical: 5),
+                  child:Container(
+                    height: MediaQuery.of(context).size.height/4,
+                    width:MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(image: AssetImage("${postmodels[index].profileImageURL}"),
+                        fit: BoxFit.fill
+                        ),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                  ),
+                  ),
+
+                  //share, comments and Likes button padding
+                  Padding(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    //likes button container
+                    Container(
+                      height: MediaQuery.of(context).size.height/15,
+                    width: MediaQuery.of(context).size.width/3.5,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color.fromRGBO(0, 0, 0, .6),
+                      width: 3,
+                      style: BorderStyle.solid,
+                      ),
+                    ),
+                      child: InkWell(
+                        onTap: (){},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          Icon(
+                            CupertinoIcons.heart,
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            size: 12,
+                          ),
+                          Text("${postmodels[index].likes} likes",
+                          style: TextStyle(
+                            color: Color.fromRGBO(0, 0, 0, 1),
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                          ),
+                          ),
+                        ],
+                        ),
+                      ),
+                    ),
+                  ],
+                  ),
+                  ),
                 ]
               ),
             );
