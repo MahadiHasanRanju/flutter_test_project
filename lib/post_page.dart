@@ -195,6 +195,7 @@ class _Post_pageState extends State<Post_page> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+
                     //likes button container
                     Container(
                       height: MediaQuery.of(context).size.height/15,
@@ -222,6 +223,73 @@ class _Post_pageState extends State<Post_page> {
                             fontSize: 12,
                           ),
                           ),
+                        ],
+                        ),
+                      ),
+                    ),
+
+                    //Comment button Container
+
+                    Container(
+                      height: MediaQuery.of(context).size.height/15,
+                      width: MediaQuery.of(context).size.width/4,
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: Color.fromRGBO(0, 0, 0, .6),
+                          width: 3,
+                          style: BorderStyle.solid,
+                        ),
+                      ),
+                      child: InkWell(
+                        onTap: (){},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Icon(CupertinoIcons.chat_bubble,
+                            size: 15,
+                            color: Color.fromRGBO(0, 0, 0, .6),
+                            ),
+                            Text(
+                              "Comments",
+                              style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                  color:Color.fromRGBO(0, 0, 0, .6),
+                              ),)
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    // Spread Button Container
+
+                    Container(
+                      height: MediaQuery.of(context).size.height/15,
+                    width: MediaQuery.of(context).size.width/3.5,
+                    decoration: BoxDecoration(
+                     border: Border.all(
+                         color: Color.fromRGBO(0, 0, 0, .6),
+                       width: 3,
+                       style: BorderStyle.solid,
+                     ),
+                    ),
+                      child: InkWell(
+                        onTap: (){},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Icon(Icons.share_outlined,
+                          size: 15,
+                          color: Color.fromRGBO(0, 0, 0, .6),
+                          ),
+                          Text(
+                            "Spread",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                            color: Color.fromRGBO(0, 0, 0, .6),
+                            ),
+                          )
                         ],
                         ),
                       ),
